@@ -115,6 +115,12 @@ async def webhook():
         logger.error(f"Error processing webhook: {e}")
         return jsonify({"status": "error", "message": str(e)}), 500
 
+
+@app.route('/')
+def home():
+    return "Bot is up and running!"
+
+
 # Quart route for health check
 @app.route("/healthcheck", methods=["GET"])
 async def healthcheck():
