@@ -55,5 +55,5 @@ def main():
     )
 
 if __name__ == "__main__":
-   Thread(target=run_flask).start()
+    Thread(target=run_flask).start()
     main()
