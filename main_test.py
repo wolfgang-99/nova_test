@@ -15,7 +15,7 @@ BOT_TOKEN = os.getenv("bot_token")
 
 # Configuration
 TOKEN = BOT_TOKEN # Replace with your bot token
-WEBHOOK_URL = "https://nova-test.onrender.com/webhook"  # Replace with your HTTPS URL
+WEBHOOK_URL = "https://nova-test.onrender.com"  # Replace with your HTTPS URL
 PORT = 8443  # Port to listen on (typically 443, 80, 88, or 8443)
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
