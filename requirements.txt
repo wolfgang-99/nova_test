@@ -4,3 +4,4 @@ flask[async]
 gunicorn~=20.1.0
 quart~=0.18.4
 uvicorn~=0.23.2
+werkzeug<2.3.0
