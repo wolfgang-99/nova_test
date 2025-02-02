@@ -9,6 +9,18 @@ from telegram.ext import (
 )
 # Load environment variables
 from dotenv import load_dotenv
+from flask import Flask
+from threading import Thread
+
+# Flask server for Render health checks
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Bot is running!"
+
+def run_flask():
+    app.run(host='0.0.0.0', port=8080)
 
 load_dotenv()
 BOT_TOKEN = os.getenv("bot_token")
@@ -16,7 +28,7 @@ BOT_TOKEN = os.getenv("bot_token")
 # Configuration
 TOKEN = BOT_TOKEN # Replace with your bot token
 WEBHOOK_URL = "https://nova-test.onrender.com"  # Replace with your HTTPS URL
-PORT = 8443  # Port to listen on (typically 443, 80, 88, or 8443)
+PORT = 10000  # Port to listen on (typically 443, 80, 88, or 8443)
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handle /start command"""
@@ -43,4 +55,5 @@ def main():
     )
 
 if __name__ == "__main__":
+   Thread(target=run_flask).start()
     main()
