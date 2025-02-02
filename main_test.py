@@ -25,7 +25,7 @@ app = Quart(__name__)
 bot_app = ApplicationBuilder().token(BOT_TOKEN).build()
 
 # Webhook URL (Replace with your actual URL)
-WEBHOOK_URL = "https://nova-bot-0rvq.onrender.com/webhook"
+WEBHOOK_URL = "https://nova-test.onrender.com/webhook"
 
 # Enable logging
 logging.basicConfig(level=logging.INFO)
